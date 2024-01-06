@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginService } from '../../../services/login.service';
-import { response } from 'express';
-import { error } from 'console';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { JwtService } from '../../../services/jwt.service';
 // import { AuthService } from '../../../services/auth.service';
