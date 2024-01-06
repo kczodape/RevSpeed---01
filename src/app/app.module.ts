@@ -3,28 +3,44 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LandingpageComponent } from './landingpage/landingpage.component';
-import { NavbarComponent } from './landingpage/navbar/navbar.component';
 
 import {FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LoginAndRegistrationModule } from './login-and-registration/login-and-registration.module';
-import { AuthService } from './services/auth.service';
+// import { AuthService } from './services/auth.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { LandingComponent } from './components/landing/landing.component';
+import { NavbarComponent } from './components/landing/navbar/navbar.component';
+import { LoginComponent } from './components/landing/login/login.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { RegisterComponent } from './components/landing/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingpageComponent,
+    LandingComponent,
     NavbarComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    LoginAndRegistrationModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatInputModule,
+    HttpClientModule
   ],
   providers: [
-    AuthService,
+    // AuthService,
     provideClientHydration()
   ],
   bootstrap: [AppComponent]

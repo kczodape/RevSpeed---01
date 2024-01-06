@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { CanActivate } from '@angular/router';
+import { CanActivate, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -12,34 +11,21 @@ export class AuthService implements CanActivate  {
 
   constructor(private router: Router) { }
 
-  login(username: String, password: String): boolean{
-    if (username == 'admin' && password == '1234') {
-      this.isAuthenticated = true;
-      return true;
-    }else if (username == 'user' && password == '1234') {
-      this.isAuthenticated = true;
-      return true;
-    }else{
-      this.isAuthenticated = false;
+  canActivate(): boolean{
+    // Check if user is logged in
+    const isLoggedIn = localStorage.getItem('jwt') !== null;
+
+    if (!isLoggedIn) {
+      // If not logged in, redirect to login page
+      this.router.navigate(['/login']);
       return false;
     }
+
+    return true;
   }
 
   logOut(): void{
-    this.isAuthenticated = false;
-    this.router.navigateByUrl('/');
-  }
-
-  isAuthenticatedUser(): boolean{
-    return this.isAuthenticated;
-  }
-
-  canActivate(): boolean{
-    if (this.isAuthenticated) {
-      return true;
-    }else{
-      this.router.navigateByUrl('/');
-      return false;
-    }
+    localStorage.removeItem('jwt');
+    this.router.navigate(['/login'])
   }
 }

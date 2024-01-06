@@ -1,25 +1,32 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LandingpageComponent } from './landingpage/landingpage.component';
+// import { AuthService } from './services/auth.service';
+import { LandingComponent } from './components/landing/landing.component';
+import { LoginComponent } from './components/landing/login/login.component';
+import { RegisterComponent } from './components/landing/register/register.component';
 import { AuthService } from './services/auth.service';
 
 const routes: Routes = [
   {
     path: '',
-    component: LandingpageComponent
+    component: LandingComponent
   },
   {
-    path: 'loginandregistration',
-    loadChildren: () => import('../app/login-and-registration/login-and-registration.module').then((m) => m.LoginAndRegistrationModule)
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   },
   {
     path: 'admin',
-    loadChildren: () => import('../app/admin/admin.module').then((m) => m.AdminModule),
+    loadChildren: () => import('../app/modules/admin/admin.module').then((m) => m.AdminModule),
     canActivate:[AuthService]
   },
   {
     path:'user',
-    loadChildren: ()=> import('../app/user/user.module').then((m)=> m.UserModule),
+    loadChildren: ()=> import('../app/modules/user/user.module').then((m)=> m.UserModule),
     canActivate:[AuthService]
   }
 ];
