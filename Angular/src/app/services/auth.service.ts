@@ -13,7 +13,7 @@ export class AuthService implements CanActivate  {
 
   canActivate(): boolean{
     // Check if user is logged in
-    const isLoggedIn = localStorage.getItem('jwt') !== null;
+    const isLoggedIn = sessionStorage.getItem('jwt') !== null;
 
     if (!isLoggedIn) {
       // If not logged in, redirect to login page
@@ -25,7 +25,7 @@ export class AuthService implements CanActivate  {
   }
 
   logOut(): void{
-    localStorage.removeItem('jwt');
+    sessionStorage.removeItem('jwt');
     this.router.navigate(['/login'])
   }
 }

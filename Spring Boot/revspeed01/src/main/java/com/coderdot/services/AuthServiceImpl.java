@@ -35,6 +35,9 @@ public class AuthServiceImpl implements AuthService {
         //Hash the password before saving
         String hashPassword = passwordEncoder.encode(signupRequest.getPassword());
         customer.setPassword(hashPassword);
+        customer.setPhoneNumber(signupRequest.getPhoneNumber());
+        customer.setAddress(signupRequest.getAddress());
+        customer.setRole("USER");
         Customer createdCustomer = customerRepository.save(customer);
         customer.setId(createdCustomer.getId());
         return customer;

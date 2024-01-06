@@ -26,14 +26,14 @@ export class JwtService {
   }
 
   private createAuhtorizationHeader() {
-    const jwtToken = localStorage.getItem('jwt');
+    const jwtToken = sessionStorage.getItem('jwt');
     if (jwtToken) {
-      console.log("JWT token found in local storage", jwtToken);
+      console.log("JWT token found in session storage", jwtToken);
       return new HttpHeaders().set(
         "Authorization", "Bearer " + jwtToken
       )
     } else {
-      console.log("JWT token not found in local storage");
+      console.log("JWT token not found in session storage");
     }
     return null;
   }

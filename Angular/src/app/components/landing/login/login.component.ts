@@ -32,7 +32,7 @@ export class LoginComponent {
         if (response.jwt != null) {
           alert("Hello, Your token is " + response.jwt);
           const jwtToken = response.jwt;
-          localStorage.setItem('jwt', jwtToken);
+          sessionStorage.setItem('jwt', jwtToken);
           this.router.navigateByUrl("/user");
         }
       }
