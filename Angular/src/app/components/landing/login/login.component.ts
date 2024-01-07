@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { JwtService } from '../../../services/jwt.service';
+import { Observable, catchError, map, throwError } from 'rxjs';
+import { error } from 'console';
 
 @Component({
   selector: 'app-login',
@@ -23,6 +25,7 @@ export class LoginComponent {
       email: ['', Validators.required, Validators.email],
       password: ['', Validators.required],
     })
+    // this.authenticatedUsersDetails();
   }
 
   submitForm() {
@@ -33,11 +36,38 @@ export class LoginComponent {
           alert("Hello, Your token is " + response.jwt);
           const jwtToken = response.jwt;
           sessionStorage.setItem('jwt', jwtToken);
-          this.router.navigateByUrl("/user");
+          this.authenticatedUsersDetails().subscribe(
+            (role: String) => {
+              alert("role: " + role)
+
+              if (role == "ADMIN") {
+                this.router.navigateByUrl("/admin");
+              } else if(role == "USER"){
+                this.router.navigateByUrl("/user");
+              }else{
+                alert("Not authenticated person");
+                this.router.navigateByUrl("/login");
+              }
+            },
+            (error) => {
+              console.error("Error getting user details:", error);
+              // Handle error, for example, redirect to login
+              this.router.navigateByUrl("/login");
+            }
+          )
+          // this.router.navigateByUrl("/user");
         }
       }
     )    
   }
 
-
+  authenticatedUsersDetails(): Observable<string> {
+    return this.service.myDetails().pipe(
+      map((response) => response.role),
+      catchError((error) => {
+        console.error("Error getting user details:", error);
+        return throwError("Failed to get user details");
+      })
+    );
+  }
 }

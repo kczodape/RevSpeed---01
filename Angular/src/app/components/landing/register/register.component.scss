@@ -1,65 +1,131 @@
-
 .container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f8f9fa;
-    margin-top: 20px;
-}
-
-h2 {
-    text-align: center;
-}
-
-.form-group {
-    margin-bottom: 20px;
-
-    label {
-        font-weight: bold;
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  .main {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    .left {
+      width: 30%;
+      border: 9px;
+      padding: 35px;
+      height: 53vh;
+      background: rgb(235, 79, 50);
+      background: radial-gradient(
+        circle,
+        #eb4f32 0%,
+        rgba(235, 88, 10, 0.4822303921568627) 99%,
+        rgba(255, 255, 255, 1) 100%
+      );
+      h3 {
+        font-size: 35px;
+        line-height: 50px;
+        letter-spacing: -0.4px;
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        font-family: "Nunito", sans-serif;
+        color: #19212a;
+      }
+      p {
+        font-size: 19px;
+        line-height: 29px;
+        letter-spacing: -0.015em;
+        font-family: "Nunito", sans-serif;
+        color: #19212a;
+      }
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
-
-    input {
-        width: 100%;
-        padding: 8px;
-        font-size: 16px;
-        border: 1px solid #ced4da;
-        border-radius: 4px;
-        transition: border-color 0.15s ease-in-out;
+    .right {
+      width: 55%;
+      padding: 15px;
+      h2 {
+        text-align: center;
+        margin-bottom: 60px;
+        background: #19212a;
+        background: linear-gradient(to right, #19212a 14%, #eb4f32 65%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .myForm {
+        display: flex;
+        flex-direction: column;
+        .inputGrp {
+          display: flex;
+          justify-content: space-evenly;
+          padding-bottom: 25px;
+          .password {
+            letter-spacing: 15px;
+          }
+          .form-group {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            label {
+              width: 85%;
+            }
+            input {
+              padding: 15px;
+              outline: none;
+              border: 1px solid rgb(235, 79, 50);
+              border-bottom: 3px solid rgb(235, 79, 50);
+              border-radius: 8px;
+              width: 85%;
+            }
+          }
+        }
+      }
+      p{
+        span{
+            color: blue;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+      }
     }
-
-    input:focus {
-        border-color: #80bdff;
-        outline: 0;
-        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-    }
-
-    .text-danger {
-        color: #dc3545;
-        font-size: 14px;
-        margin-top: 4px;
-    }
+  }
 }
 
-button {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
+// button css
+
+.button-24 {
+  width: 99%;
+  background: rgb(235, 79, 50);
+  border: 1px solid #ff4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
 }
 
-.btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
+.button-24:hover,
+.button-24:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #ff4742;
 }
 
-.btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-}
-
-.btn-primary:disabled,
-.btn-primary.disabled {
-    background-color: #b3d7ff;
-    border-color: #b3d7ff;
+.button-24:active {
+  opacity: 0.5;
 }

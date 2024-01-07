@@ -22,12 +22,12 @@ const routes: Routes = [
   {
     path: 'admin',
     loadChildren: () => import('../app/modules/admin/admin.module').then((m) => m.AdminModule),
-    canActivate:[AuthService]
+    canActivate: [AuthService],
   },
   {
     path:'user',
-    loadChildren: ()=> import('../app/modules/user/user.module').then((m)=> m.UserModule),
-    canActivate:[AuthService]
+    loadChildren: () => import('../app/modules/user/user.module').then((m) => m.UserModule),
+    canActivate: [AuthService],
   }
 ];
 

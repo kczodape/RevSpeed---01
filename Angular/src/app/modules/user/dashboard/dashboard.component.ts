@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { JwtService } from '../../../services/jwt.service';
 import { AuthService } from '../../../services/auth.service';
+import { UserService } from '../services/user.service';
+import { response } from 'express';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,6 +20,15 @@ export class DashboardComponent {
     this.service.hello().subscribe(
       (responce) => {
         console.log(responce); 
+      }
+    )
+  }
+
+  myDetails(){
+    this.service.myDetails().subscribe(
+      (response) => {
+        console.log(response);
+        
       }
     )
   }

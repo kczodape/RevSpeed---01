@@ -1,27 +1,49 @@
 <app-navbar></app-navbar>
 <div class="container">
-    <h2>Register</h2>
-    <form [formGroup]="registerForm" (ngSubmit)=submitForm()>
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" formControlName="name" />
+    <div class="main">
+        <div class="left">
+            <h3>Unlock the Gateway to Convenience!</h3>
+            <p>Step inside and effortlessly manage all your RevSpeed services and payments. We're holding the door wide open for you!</p>
         </div>
+        <div class="right">
+            <h2>Register</h2>
+            <form class="myForm" [formGroup]="registerForm" (ngSubmit)=submitForm()>
+                <div class="inputGrp">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" formControlName="name" />
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" formControlName="email" />
+                    </div>
+                </div>
+                <div class="inputGrp">
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control password" id="password" formControlName="password" />
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" class="form-control password" id="confirmPassword" formControlName="confirmPassword" />
+                    </div>
+                </div>
+                <div class="inputGrp">
+                    <div class="form-group">
+                        <label for="phoneNumber">Phone number</label>
+                        <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber" />
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" class="form-control" id="address" formControlName="address" />
+                    </div>
+                </div>
+                <button class="button-24" type="submit" role="button" [disabled]="registerForm.invalid">Register</button>
 
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" formControlName="email" />
+                <!-- <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Register</button> -->
+            </form>
+            <p>Already register ? <span routerLink="/login">Signin</span></p>
         </div>
-
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" formControlName="password" />
-        </div>
-
-        <div class="form-group">
-            <label for="confirmPassword">Confirm Password</label>
-            <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword" />
-        </div>
-
-        <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Register</button>
-    </form>
+    </div>
 </div>

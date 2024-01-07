@@ -18,9 +18,14 @@ export class JwtService {
   login(loginRequest: any):Observable<any>{
     return this.http.post(BASE_URL+'login',loginRequest)
   }
-
   hello(): Observable<any> {
     return this.http.get(BASE_URL + 'api/hello', {
+      headers: this.createAuhtorizationHeader() || {}
+    })
+  }
+
+  myDetails(): Observable<any>{
+    return this.http.get(BASE_URL + 'api/mydetails', {
       headers: this.createAuhtorizationHeader() || {}
     })
   }

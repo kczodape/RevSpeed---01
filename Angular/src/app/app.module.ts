@@ -17,6 +17,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './components/landing/register/register.component';
+import { JwtModule } from '@auth0/angular-jwt';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +39,13 @@ import { RegisterComponent } from './components/landing/register/register.compon
     MatToolbarModule,
     MatFormFieldModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => sessionStorage.getItem('jwt'),
+        // allowedDomains: ['your-api-domain.com'], // replace with your API domain
+      },
+    }),
   ],
   providers: [
     // AuthService,
