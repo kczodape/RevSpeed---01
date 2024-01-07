@@ -30,10 +30,10 @@
             placeholder="Email*"
           />
           <div class="validation" *ngIf="isFieldInvalid('email')">
-            <ng-container *ngIf="isEmailExists()">
+            <ng-container *ngIf="!isEmailExists()">
               Email ID already exists. Please enter a different email.
             </ng-container>
-            <ng-container *ngIf="!isEmailExists() && isFieldInvalid('email')">
+            <ng-container *ngIf="isEmailExists() && isFieldInvalid('email')">
               Please enter correct email!
             </ng-container>
           </div>
@@ -43,11 +43,13 @@
         <div class="inpLabel">
           <label for="password">Enter password</label>
           <input
-            type="password"
+            type="{{hidePassword ? 'password' : 'text'}}"
             id="password"
             formControlName="password"
             placeholder="Password*"
           />
+          <mat-icon class="eye" (click)="togglePasswordVisibility()">{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+
           <div class="validation" *ngIf="isFieldInvalid('password')">
             Please enter your password!
           </div>

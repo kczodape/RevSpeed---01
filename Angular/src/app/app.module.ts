@@ -18,6 +18,7 @@ import {MatInputModule} from '@angular/material/input';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './components/landing/register/register.component';
 import { JwtModule } from '@auth0/angular-jwt';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { JwtModule } from '@auth0/angular-jwt';
     MatIconModule,
     MatToolbarModule,
     MatFormFieldModule,
+    MatSnackBarModule,
     MatInputModule,
     HttpClientModule,
     JwtModule.forRoot({

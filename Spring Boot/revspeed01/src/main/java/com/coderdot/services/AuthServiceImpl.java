@@ -5,6 +5,8 @@ import com.coderdot.entities.Customer;
 import com.coderdot.repository.CustomerRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -23,10 +25,10 @@ public class AuthServiceImpl implements AuthService {
 
 
     @Override
-    public Customer createCustomer(SignupRequest signupRequest) {
+    public ResponseEntity<?> createCustomer(SignupRequest signupRequest) {
         //Check if customer already exist
         if (customerRepository.existsByEmail(signupRequest.getEmail())) {
-            return null;
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("User already exists. Please try another email.");
         }
 
         Customer customer = new Customer();
@@ -40,6 +42,6 @@ public class AuthServiceImpl implements AuthService {
         customer.setRole("USER");
         Customer createdCustomer = customerRepository.save(customer);
         customer.setId(createdCustomer.getId());
-        return customer;
+        return ResponseEntity.status(HttpStatus.CREATED).body(customer);
     }
 }

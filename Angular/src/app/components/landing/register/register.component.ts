@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { JwtService } from '../../../services/jwt.service';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {MatSnackBar, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
+
+import {
+  AbstractControl,
+  FormBuilder,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -9,21 +17,32 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup | any;
+  hidePassword: boolean = true;
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
 
-  constructor(
-    private service: JwtService,
-    private fb: FormBuilder
-  ) { }
+  constructor(private router: Router, private service: JwtService, private fb: FormBuilder, public snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
-    this.registerForm = this.fb.group({
-      name: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required]],
-      confirmPassword: ['', [Validators.required]],
-      phoneNumber: [''],
-      address: ['']
-    }, { validator: this.passwordMathValidator })
+    this.registerForm = this.fb.group(
+      {
+        name: ['', [Validators.required]],
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', [Validators.required]],
+        confirmPassword: ['', [Validators.required]],
+        phoneNumber: [''],
+        address: [''],
+      },
+      { validator: this.passwordMathValidator }
+    )
+    this.service.emailExistsError$.subscribe((existsError) => {
+      if (existsError) {
+        this.registerForm.get('email')?.setErrors({'emailExists': true});
+      }
+    });
+  }
+
+  togglePasswordVisibility(): void {
+    this.hidePassword = !this.hidePassword;
   }
 
   passwordMathValidator(formGroup: FormGroup) {
@@ -36,15 +55,21 @@ export class RegisterComponent implements OnInit {
     }
   }
 
+  openSnackBar(){
+    this.snackBar.open('Registration successful!', 'Close', {
+      duration: 3000,
+      verticalPosition: this.verticalPosition
+    });
+  }
+
   submitForm() {
     console.log(this.registerForm.value);
-    this.service.register(this.registerForm.value).subscribe(
-      (response) => {
-        if (response.id != null) {
-          alert("Hello " + response.name);
-        }
+    this.service.register(this.registerForm.value).subscribe((response) => {
+      if (response.id != null) {
+        this.openSnackBar();
+        this.router.navigateByUrl("/login");
       }
-    )
+    });
   }
 
   isFieldInvalid(fieldName: string): boolean | any {
@@ -63,16 +88,13 @@ export class RegisterComponent implements OnInit {
     if (passwordControl?.hasError('pattern')) {
       return 'Password should contain at least one capital letter, one small letter, one number, and one special character';
     }
-    return '';
-  }
+    return '';
+  }
 
-isEmailExists(): boolean {
-  const emailControl: AbstractControl | null =
-    this.registerForm.get('email');
-  const email: string = emailControl?.value;
-  const emailExists = false; 
-  return emailExists;
-}
-
-
+  isEmailExists(): boolean {
+    const emailControl: AbstractControl | null = this.registerForm.get('email');
+    const email: string = emailControl?.value;
+    
+    return this.registerForm.hasError('emailExists') && email.trim() !== '';
+  }
 }
