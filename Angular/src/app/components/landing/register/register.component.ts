@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JwtService } from '../../../services/jwt.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -46,6 +46,33 @@ export class RegisterComponent implements OnInit {
       }
     )
   }
+
+  isFieldInvalid(fieldName: string): boolean | any {
+    const field = this.registerForm.get(fieldName);
+    return field?.invalid && field?.touched;
+  }
+
+  getErrorMessage(): string {
+    const passwordControl = this.registerForm.get('password');
+    if (passwordControl?.hasError('required')) {
+      return 'Password is required';
+    }
+    if (passwordControl?.hasError('minlength')) {
+      return 'Password should be at least 6 characters long';
+    }
+    if (passwordControl?.hasError('pattern')) {
+      return 'Password should contain at least one capital letter, one small letter, one number, and one special character';
+    }
+    return '';
+  }
+
+isEmailExists(): boolean {
+  const emailControl: AbstractControl | null =
+    this.registerForm.get('email');
+  const email: string = emailControl?.value;
+  const emailExists = false; 
+  return emailExists;
+}
 
 
 }
