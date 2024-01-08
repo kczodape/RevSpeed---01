@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { error } from 'console';
-import { BehaviorSubject, Observable, catchError } from 'rxjs';
+import { BehaviorSubject, Observable, catchError, throwError } from 'rxjs';
 
 const BASE_URL = ["http://localhost:8080/"]
 
@@ -30,7 +30,17 @@ export class JwtService {
   }
 
   login(loginRequest: any):Observable<any>{
-    return this.http.post(BASE_URL+'login',loginRequest)
+    return this.http.post(BASE_URL+'login',loginRequest).pipe(
+      catchError((error: any) => {
+        if (error.status === 401) {
+          alert("Invalid credentials! Please check and enter again")  
+        } else {
+          console.log('Setting alert message: Login failed. Please try again later.');
+          console.error('Login failed. Error:', error);
+        }
+        return throwError(error);
+      })
+    )
   }
   hello(): Observable<any> {
     return this.http.get(BASE_URL + 'api/hello', {

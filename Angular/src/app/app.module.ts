@@ -19,6 +19,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './components/landing/register/register.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { JwtService } from './services/jwt.service';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
   ],
   providers: [
     // AuthService,
+    JwtService,
     provideClientHydration()
   ],
   bootstrap: [AppComponent]

@@ -6,6 +6,8 @@ import com.coderdot.services.jwt.CustomerServiceImpl;
 import com.coderdot.utils.JwtUtil;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
@@ -37,20 +39,20 @@ public class LoginController {
     }
 
     @PostMapping
-    public LoginResponse login(@RequestBody LoginRequest loginRequest, HttpServletResponse response) throws IOException {
+    public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest, HttpServletResponse response) throws IOException {
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword()));
         } catch (BadCredentialsException e) {
-            throw new BadCredentialsException("Incorrect email or password.");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
         } catch (DisabledException disabledException) {
             response.sendError(HttpServletResponse.SC_NOT_FOUND, "Customer is not activated");
-            return null;
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
         }
         final UserDetails userDetails = customerService.loadUserByUsername(loginRequest.getEmail());
 
         final String jwt = jwtUtil.generateToken(userDetails.getUsername());
 
-        return new LoginResponse(jwt);
+        return ResponseEntity.ok(new LoginResponse(jwt));
     }
 
 }
