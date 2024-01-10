@@ -1,0 +1,54 @@
+.dashboard {
+  display: flex;
+  justify-content: flex-start;
+  width: 90vw;
+  .left {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    .cards,
+    .pies {
+      display: flex;
+      justify-content: space-around;
+    }
+    .cards {
+      margin-bottom: 10%;
+    }
+    .pies {
+      .pie {
+        width: 35%;
+      }
+    }
+  }
+}
+.reveneu-graph {
+  width: 500px;
+  margin-top: 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin-left: 150px;
+}
+
+@media (max-width: 595px) {
+  .dashboard {
+    flex-direction: column;
+    .left {
+      .cards,
+      .pies {
+        flex-direction: column;
+      }
+      .pie {
+        width: 280px !important;
+      }
+    }
+    .reveneu-graph {
+      margin-left: 0;
+      width: 300px;
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+}

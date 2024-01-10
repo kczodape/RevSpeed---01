@@ -8,10 +8,6 @@ import { AuthService } from './services/auth.service';
 
 const routes: Routes = [
   {
-    path: '',
-    component: LandingComponent
-  },
-  {
     path: 'login',
     component: LoginComponent
   },
@@ -28,7 +24,16 @@ const routes: Routes = [
     path:'user',
     loadChildren: () => import('../app/modules/user/user.module').then((m) => m.UserModule),
     canActivate: [AuthService],
-  }
+  },
+  {
+    path: 'landing',  // Change this path to a unique name
+    component: LandingComponent,
+  },
+  {
+    path: '**',  // Catch-all route for unknown paths, redirect to landing
+    redirectTo: 'landing',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({

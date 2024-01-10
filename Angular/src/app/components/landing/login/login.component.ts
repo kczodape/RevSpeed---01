@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { JwtService } from '../../../services/jwt.service';
@@ -9,6 +9,7 @@ import { error } from 'console';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
+  encapsulation: ViewEncapsulation.None 
 })
 export class LoginComponent {
   loginForm: FormGroup | any;
