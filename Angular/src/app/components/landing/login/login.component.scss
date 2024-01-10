@@ -1,3 +1,7 @@
+$orange: #f05e23;
+$head_text: #333;
+$error: red;
+$box_shadow:lightgrey;
 .login {
   display: flex;
   width: 98%;
@@ -10,7 +14,7 @@
     width: 3px;
     border-radius: 100%;
     margin: 0 25px 0 0;
-    background-color: #f05e23;
+    background-color: $orange;
   }
   .login_form {
     width: 46%;
@@ -19,10 +23,10 @@
     justify-content: center;
     h1 {
       text-align: center;
-      color: #333;
+      color: $head_text;
     }
     #invalid {
-      color: red;
+      color: $error;
       text-align: center;
     }
     form {
@@ -31,8 +35,8 @@
       input,
       select {
         border: none;
-        border-bottom: 2px solid #f05e23;
-        box-shadow: 0px -2px 7px -2px lightgrey;
+        border-bottom: 2px solid $orange;
+        box-shadow: 0px -2px 7px -2px $box_shadow;
         padding: 10px 5px;
         border-radius: 5px 5px 0 0;
         outline: none;
