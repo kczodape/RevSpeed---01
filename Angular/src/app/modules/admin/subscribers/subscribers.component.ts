@@ -1,4 +1,3 @@
-import { Component } from '@angular/core';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -19,7 +18,6 @@ export interface Article {
   templateUrl: './subscribers.component.html',
   styleUrl: './subscribers.component.scss'
 })
-export class SubscribersComponent {
 
 export class SubscribersComponent implements AfterViewInit {
   @ViewChild(MatSort) sort = {} as MatSort;

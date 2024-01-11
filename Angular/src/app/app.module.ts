@@ -24,13 +24,14 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatCardModule} from '@angular/material/card';
 import {MatChipsModule} from '@angular/material/chips';
 import { JwtService } from './services/jwt.service';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselComponent } from './components/landing/carousel/carousel.component';
 import { BroadbandplansComponent } from './components/landing/broadbandplans/broadbandplans.component';
 import { IndividualcardsComponent } from './components/landing/broadbandplans/individualcards/individualcards.component';
 import { BusinesscardsComponent } from './components/landing/broadbandplans/businesscards/businesscards.component';
 import { ViewdetailedbroadbandComponent } from './components/landing/viewdetailedbroadband/viewdetailedbroadband.component';
+import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
