@@ -5,6 +5,7 @@ import { LandingComponent } from './components/landing/landing.component';
 import { LoginComponent } from './components/landing/login/login.component';
 import { RegisterComponent } from './components/landing/register/register.component';
 import { AuthService } from './services/auth.service';
+import { ViewdetailedbroadbandComponent } from './components/landing/viewdetailedbroadband/viewdetailedbroadband.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path:'viewmoreplan',
+    component: ViewdetailedbroadbandComponent
   },
   {
     path: 'admin',

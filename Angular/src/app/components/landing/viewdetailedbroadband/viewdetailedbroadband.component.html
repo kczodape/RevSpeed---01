@@ -1,0 +1,71 @@
+<h1>BroadBand</h1>
+<p>
+  Step into the future of unlimited broadband plans with Airtel fibernet
+  technology. Experience the high-speed internet on our existing Fiber broadband
+  connection across multiple devices. Airtel Xstream Fiber offers you with Fiber
+  optic internet connection transforming your daily broadband connection
+  experience with high-speed internet. Airtel allows you to enjoy the fastest
+  broadband connection with the speed of up to 1 Gbps, which means once you
+  connect broadband, you will get faster downloads and less buffering. This FTTH
+  (Fiber to home) technology provides you with fully-dedicated Fiber optic cable
+  different internet packages, which connect up to 60 devices via a
+  professional-grade Wi-Fi router modem. These internet packages in offer faster
+  HD video streaming, heavy file downloads, and uploads.Unlimited internet plans
+  such as Ultra include upto 1 Gbps speed, unlimited local/STD calls and more
+  importantly, Amazon Prime and Airtel Xstream subscription. Now to get free
+  Wi-Fi router home, connect broadband and enjoy high-speed internet,
+  entertainment, information treasure and more, without compromises.
+</p>
+
+<div class="individual">
+  <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+    <ng-container
+      *ngFor="let planGroup of broadbandServicePlans; let i = index"
+    >
+      <mat-tab [label]="getTabLabel(i)" class="custom-tab-label">
+        <div class="plan-tab-container">
+          <mat-card>
+            <mat-card-title-group>
+              <mat-card-title>{{ getTabLabel(i) }}</mat-card-title>
+              <mat-card-subtitle>List of {{ getTabLabel(i) }} plans</mat-card-subtitle>
+            </mat-card-title-group>
+            <mat-card-content>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Plan ID</th>
+                    <th>Service ID</th>
+                    <th>Plan Name</th>
+                    <th>Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let plan of planGroup">
+                    <td>{{ plan[0] }}</td>
+                    <td>{{ plan[1] }}</td>
+                    <td>{{ plan[2] }}</td>
+                    <td>{{ plan[3] }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </mat-tab>
+    </ng-container>
+  </mat-tab-group>
+</div>
+
+<div class="business">
+  <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+    <mat-tab label="Monthly" class="custom-tab-label">
+      <div class="plan-tab-container"></div>
+    </mat-tab>
+    <mat-tab label="Quarterly" class="custom-tab-label">
+      <div class="plan-tab-container"></div>
+    </mat-tab>
+    <mat-tab label="Yearly-Plans" class="custom-tab-label">
+      <div class="plan-tab-container"></div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
