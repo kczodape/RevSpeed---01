@@ -21,6 +21,11 @@ import { BroadbandpiechartComponent } from './dashboard/broadbandpiechart/broadb
 import { DthpiechartComponent } from './dashboard/dthpiechart/dthpiechart.component';
 
 
+import { ActiveinactiveusergraphComponent } from './dashboard/activeinactiveusergraph/activeinactiveusergraph.component';
+import { MatTableModule } from '@angular/material/table'; 
+import { MatSortModule } from '@angular/material/sort'; 
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -34,6 +39,7 @@ import { DthpiechartComponent } from './dashboard/dthpiechart/dthpiechart.compon
     TotalreveneucardComponent,
     BroadbandpiechartComponent,
     DthpiechartComponent,
+    ActiveinactiveusergraphComponent,
   ],
   imports: [
     CommonModule,
@@ -43,7 +49,11 @@ import { DthpiechartComponent } from './dashboard/dthpiechart/dthpiechart.compon
     MatButtonModule,
     MatSidenavModule,
     MatListModule,
-    AgChartsAngularModule
+    AgChartsAngularModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule
+
   ]
 })
 export class AdminModule { }
