@@ -18,8 +18,20 @@ import {MatInputModule} from '@angular/material/input';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './components/landing/register/register.component';
 import { JwtModule } from '@auth0/angular-jwt';
+import {MatTabsModule} from '@angular/material/tabs';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatCardModule} from '@angular/material/card';
+import {MatChipsModule} from '@angular/material/chips';
 import { JwtService } from './services/jwt.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { CarouselComponent } from './components/landing/carousel/carousel.component';
+import { BroadbandplansComponent } from './components/landing/broadbandplans/broadbandplans.component';
+import { IndividualcardsComponent } from './components/landing/broadbandplans/individualcards/individualcards.component';
+import { BusinesscardsComponent } from './components/landing/broadbandplans/businesscards/businesscards.component';
+import { ViewdetailedbroadbandComponent } from './components/landing/viewdetailedbroadband/viewdetailedbroadband.component';
+
 
 
 @NgModule({
@@ -28,7 +40,12 @@ import { JwtService } from './services/jwt.service';
     LandingComponent,
     NavbarComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CarouselComponent,
+    BroadbandplansComponent,
+    IndividualcardsComponent,
+    BusinesscardsComponent,
+    ViewdetailedbroadbandComponent
   ],
   imports: [
     BrowserModule,
@@ -38,9 +55,15 @@ import { JwtService } from './services/jwt.service';
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
+    MatCardModule,
+    MatMenuModule,
+    MatTabsModule,
+    MatChipsModule,
     MatToolbarModule,
     MatFormFieldModule,
     MatSnackBarModule,
+    NgbModule,
+    NgbCarouselModule,
     MatInputModule,
     HttpClientModule,
     JwtModule.forRoot({

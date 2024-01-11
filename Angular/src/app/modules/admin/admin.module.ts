@@ -19,10 +19,13 @@ import { TotalsubscribercardComponent } from './dashboard/totalsubscribercard/to
 import { TotalreveneucardComponent } from './dashboard/totalreveneucard/totalreveneucard.component';
 import { BroadbandpiechartComponent } from './dashboard/broadbandpiechart/broadbandpiechart.component';
 import { DthpiechartComponent } from './dashboard/dthpiechart/dthpiechart.component';
+
+
 import { ActiveinactiveusergraphComponent } from './dashboard/activeinactiveusergraph/activeinactiveusergraph.component';
 import { MatTableModule } from '@angular/material/table'; 
 import { MatSortModule } from '@angular/material/sort'; 
 import { MatPaginatorModule } from '@angular/material/paginator';
+
 @NgModule({
   declarations: [
     DashboardComponent,

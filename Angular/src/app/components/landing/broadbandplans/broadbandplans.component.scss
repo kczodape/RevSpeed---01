@@ -1,0 +1,121 @@
+/* Add this to your plan-tab.component.scss file */
+
+h2 {
+    font-size: 24px;
+  }
+  
+  p {
+    font-size: 16px;
+  }
+  
+  .mat-tab-group {
+    padding: 10px;
+    background-color: #f5d4d4;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+  }
+  
+  .plan-tab-container {
+    padding: 10px; /* Adjust the padding as needed */
+  }
+  
+  .plan-tab-view-more {
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    // background-color: #f5d4d4;
+    position: sticky;
+    bottom: 0;
+  }
+  #btn1,#btn2{
+    background-color: #ea4343;
+    color: white;
+    border-radius: 30px;
+  }
+  
+  ::ng-deep .mat-tab-label {
+    color: #120f0f;
+    font-size: 100%;
+    margin: 0 8px;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    background-color: #2196F3;
+  }
+  
+  ::ng-deep .mat-tab-label:hover {
+    background-color: #db1e1e;
+  }
+  
+  ::ng-deep .mat-tab-label.mat-tab-label-active {
+    background-color: #2196F3;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+  }
+  
+  ::ng-deep .mat-tab-label.mat-tab-label-active:hover {
+    background-color: #0c7cd5;
+  }
+  
+  ::ng-deep .mat-tab-label.mat-tab-label-active:focus,
+  ::ng-deep .mat-tab-label.mat-tab-label-disabled:focus {
+    outline: none;
+  }
+  
+  ::ng-deep .custom-tab-label {
+    background-color: coral;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  ::ng-deep .custom-tab-label:hover {
+    background-color: darkorange;
+  }
+  
+  ::ng-deep .custom-tab-label.mat-tab-label-active {
+    background-color: darkorange;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .mat-tab-label {
+      font-size: 14px;
+      margin: 0 4px; /* Adjust the margin as needed */
+    }
+  
+    h2 {
+      font-size: 20px;
+    }
+  
+    p {
+      font-size: 14px;
+    }
+  
+    .plan-tab-container {
+      padding: 5px; /* Adjust the padding as needed */
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    h2 {
+      font-size: 18px;
+    }
+  
+    p {
+      font-size: 12px;
+    }
+  
+    .mat-tab-label {
+      font-size: 12px;
+      margin: 0 2px; /* Adjust the margin as needed */
+    }
+  
+    .plan-tab-container {
+      padding: 2px; /* Adjust the padding as needed */
+    }
+  }
+  
