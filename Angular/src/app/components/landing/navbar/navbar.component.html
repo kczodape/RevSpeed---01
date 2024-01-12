@@ -18,8 +18,9 @@
     <button mat-menu-item (click)="logout()"><i class="fa-solid fa-arrow-right-to-bracket"></i> Logout</button>
   </mat-menu>
   
-  <button class="btn login" routerLink="/login" >Login</button>
-  <button class="btn register" routerLink="/register">Register</button>
+  <button class="btn login" *ngIf="!isUserLoggedIn" routerLink="/login">Login</button>
+  <button class="btn login" *ngIf="isUserLoggedIn" (click)="logout()">Logout</button>
+  <button class="btn register" *ngIf="!isUserLoggedIn" routerLink="/register">Register</button>
   <button mat-button [matMenuTriggerFor]="profileMenu" *ngIf="isUserLoggedIn">
     <mat-icon>more_vert</mat-icon>
   </button>
