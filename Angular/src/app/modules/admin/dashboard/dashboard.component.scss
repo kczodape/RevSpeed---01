@@ -13,6 +13,9 @@
     }
     .cards {
       margin-bottom: 10%;
+      .card{
+        border: none;
+      }
     }
     .pies {
       .pie {
@@ -27,7 +30,12 @@
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   margin-left: 150px;
 }
-
+.active-user{
+  width: 95%;
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+}
 @media (max-width: 595px) {
   .dashboard {
     flex-direction: column;
