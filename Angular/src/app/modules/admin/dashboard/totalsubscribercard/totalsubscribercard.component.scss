@@ -5,8 +5,8 @@
     rgba(255, 102, 0, 1) 100%,
     rgba(255, 255, 161, 1) 100%
   );
-  width: 100%;
-  height: 136px;
+  width: 345px;
+  height: 160px;
   margin: 16px 0px 0px;
   padding: 24px 112px 24px 24px;
   border-radius: 15px;
@@ -25,13 +25,17 @@
 
 @media (max-width: 595px) {
   .card {
-    width: 170px;
-    height: 95px;
-    .para1{
+    width: 100%;
+    height: 110px;
+    display: block;
+    margin-left: 10%;
+    padding: 15px 20px;
+    .para1 {
       font-size: 12px;
     }
-    .para2{
-      font-size: 40px;
+    .para2 {
+      font-size: 30px;
+      margin-top: 3px;
     }
   }
 }

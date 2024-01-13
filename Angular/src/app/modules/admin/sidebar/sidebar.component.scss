@@ -50,3 +50,35 @@ mat-drawer {
     }
   }
 }
+
+mat-drawer-content{
+  overflow: hidden;
+}
+
+
+@media (max-width: 595px) {
+  mat-drawer{
+    width: 200px;
+    .image{
+      width: 100%;
+    }
+    .info{
+      margin-top: 12px;
+    }
+    mat-nav-list{
+      mat-list-item{
+        .list-item{
+          icon, p{
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
