@@ -1,6 +1,7 @@
 /* Add this to your plan-tab.component.scss file */
 
 h2 {
+  font-size: 24px;
   margin-top: 7%;
   text-align: center;
   font-size: 35px;
@@ -16,6 +17,9 @@ p {
   font-size: 16px;
 }
 
+.mat-tab-group {
+  padding: 10px;
+  background-color: #f5d4d4;
 mat-tab-group {
   padding: 10px;
   background-color: #f9f9f9;
@@ -25,6 +29,15 @@ mat-tab-group {
 }
 
 .plan-tab-container {
+  padding: 10px; /* Adjust the padding as needed */
+}
+
+.plan-tab-view-more {
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+}
+#btn1 {
   padding: 30px 0; /* Adjust the padding as needed */
 }
 
@@ -38,6 +51,8 @@ mat-tab-group {
     rgba(253, 87, 50, 1) 100%,
     rgba(255, 183, 135, 1) 100%
   );
+  color: white;
+  border-radius: 8px;
   color: #fff !important;
   border-radius: 5px;
   padding: 0 50px;

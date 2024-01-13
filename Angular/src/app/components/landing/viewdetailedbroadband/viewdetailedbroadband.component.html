@@ -1,71 +1,139 @@
-<h1>BroadBand</h1>
-<p>
-  Step into the future of unlimited broadband plans with Airtel fibernet
-  technology. Experience the high-speed internet on our existing Fiber broadband
-  connection across multiple devices. Airtel Xstream Fiber offers you with Fiber
-  optic internet connection transforming your daily broadband connection
-  experience with high-speed internet. Airtel allows you to enjoy the fastest
-  broadband connection with the speed of up to 1 Gbps, which means once you
-  connect broadband, you will get faster downloads and less buffering. This FTTH
-  (Fiber to home) technology provides you with fully-dedicated Fiber optic cable
-  different internet packages, which connect up to 60 devices via a
-  professional-grade Wi-Fi router modem. These internet packages in offer faster
-  HD video streaming, heavy file downloads, and uploads.Unlimited internet plans
-  such as Ultra include upto 1 Gbps speed, unlimited local/STD calls and more
-  importantly, Amazon Prime and Airtel Xstream subscription. Now to get free
-  Wi-Fi router home, connect broadband and enjoy high-speed internet,
-  entertainment, information treasure and more, without compromises.
-</p>
+<div class="container">
+  <h1>Welcome to Broadband Service</h1>
+  <br>
+  <p>
+    At our Broadband Service, we're dedicated to providing you with
+    lightning-fast internet. Whether you're at home or running a business, our
+    broadband plans cater to your needs.
+  </p>
 
-<div class="individual">
-  <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
-    <ng-container
-      *ngFor="let planGroup of broadbandServicePlans; let i = index"
-    >
-      <mat-tab [label]="getTabLabel(i)" class="custom-tab-label">
-        <div class="plan-tab-container">
-          <mat-card>
-            <mat-card-title-group>
-              <mat-card-title>{{ getTabLabel(i) }}</mat-card-title>
-              <mat-card-subtitle>List of {{ getTabLabel(i) }} plans</mat-card-subtitle>
-            </mat-card-title-group>
-            <mat-card-content>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Plan ID</th>
-                    <th>Service ID</th>
-                    <th>Plan Name</th>
-                    <th>Price</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let plan of planGroup">
-                    <td>{{ plan[0] }}</td>
-                    <td>{{ plan[1] }}</td>
-                    <td>{{ plan[2] }}</td>
-                    <td>{{ plan[3] }}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </mat-card-content>
-          </mat-card>
-        </div>
-      </mat-tab>
-    </ng-container>
-  </mat-tab-group>
-</div>
+  <div class="plans">
+    <div class="plan">
+      <h2>Individual Plans</h2>
+      <ul>
+        <li>
+          <strong>Starter Plan:</strong> Perfect for light internet users.
+          Speeds of up to [Speed] Mbps. Ideal for browsing, streaming, and
+          staying connected.
+        </li>
+        <li>
+          <strong>Family Plan:</strong> Designed for households with multiple
+          devices. Enjoy blazing fast speeds of [Speed] Mbps. Stream, work, and
+          game without interruptions.
+        </li>
+        <li>
+          <strong>Ultimate Plan:</strong> For power users who demand the best.
+          Lightning-fast speeds of [Speed] Mbps. Ideal for 4K streaming, gaming,
+          and more.
+        </li>
+      </ul>
+    </div>
 
-<div class="business">
-  <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
-    <mat-tab label="Monthly" class="custom-tab-label">
-      <div class="plan-tab-container"></div>
-    </mat-tab>
-    <mat-tab label="Quarterly" class="custom-tab-label">
-      <div class="plan-tab-container"></div>
-    </mat-tab>
-    <mat-tab label="Yearly-Plans" class="custom-tab-label">
-      <div class="plan-tab-container"></div>
-    </mat-tab>
-  </mat-tab-group>
+    <div class="plan">
+      <h2>Business Plans</h2>
+      <ul>
+        <li>
+          <strong>Startup Package:</strong> Tailored for small businesses.
+          Reliable speeds of [Speed] Mbps. Perfect for email, video
+          conferencing, and online transactions.
+        </li>
+        <li>
+          <strong>Enterprise Solution:</strong> Scalable for growing businesses.
+          High-speed internet at [Speed] Mbps. Supports heavy data usage and
+          multiple users.
+        </li>
+        <li>
+          <strong>Corporate Elite:</strong> Unparalleled connectivity for large
+          enterprises. Speeds reaching [Speed] Mbps. Dedicated bandwidth for
+          seamless operations.
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <!-- Id Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>No.</th>
+        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+      </ng-container>
+
+      <!-- Plan Type Column -->
+      <ng-container matColumnDef="planType">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Plan Type</th>
+        <td mat-cell *matCellDef="let element">{{ element.planType }}</td>
+      </ng-container>
+
+      <!-- Plan Name Column -->
+      <ng-container matColumnDef="planName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Plan Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.planName }}</td>
+      </ng-container>
+
+      <!-- speed Column -->
+      <ng-container matColumnDef="speed">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Speed</th>
+        <td mat-cell *matCellDef="let element">{{ element.speed }}</td>
+      </ng-container>
+
+      <!-- description Column -->
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          Plan Description
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+      </ng-container>
+
+      <!-- price Column -->
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
+        <td mat-cell *matCellDef="let element">
+          <button
+            mat-raised-button
+            id="btn1"
+            class="plan-tab-view-more-btn"
+            routerLink="/viewmoreplan"
+          >
+            Rs.{{ element.price }}/-
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 20]"
+      showFirstLastButtons
+    ></mat-paginator>
+  </div>
+
+  <div class="special-offers">
+    <h2>Special Offers</h2>
+    <ul>
+      <li>
+        <strong>First Month Free:</strong> Sign up today and get your first
+        month of broadband service absolutely free. Experience the difference
+        risk-free.
+      </li>
+      <li>
+        <strong>Business Bundle:</strong> Businesses subscribing to our service
+        get a complimentary router and installation. Set up your office for
+        success without extra costs.
+      </li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="cta">
+    <h2>Join RevSpeed Today!!!</h2>
+    <p>
+      Discover the world of fast and reliable internet with [Your Broadband
+      Service Name]. Whether you're streaming your favorite shows at home or
+      powering your business operations, we are here to elevate your online
+      experience. Join us today and stay connected like never before!
+    </p>
+  </div>
 </div>
