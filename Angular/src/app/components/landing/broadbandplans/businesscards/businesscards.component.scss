@@ -12,6 +12,7 @@
 
 .purchace {
   display: flex;
+  padding-top: 30%;
   .rental {
     width: 65%;
     .price {
@@ -38,12 +39,12 @@
   border-radius: 5px;
   flex: 0 0 calc(33.33% - 16px); /* Three cards per row by default */
   max-width: calc(18.33% - 16px); /* Limit the maximum width */
-  height: 480px;
+  height: 530px;
 }
 
 #img-container {
   width: 100%; /* Ensure the image takes 100% of the container width */
-  height: 236px; /* Set a fixed height for consistency, adjust as needed */
+  height: 165px; /* Set a fixed height for consistency, adjust as needed */
   object-fit: cover; /* Maintain aspect ratio and cover the container */
 }
 
