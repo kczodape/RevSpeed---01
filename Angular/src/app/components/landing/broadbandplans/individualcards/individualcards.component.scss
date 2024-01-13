@@ -1,56 +1,5 @@
 /* card-list.component.scss */
 .card-list {
-    // border: 2px solid black;
-    display: flex;
-    flex-wrap: nowrap; /* Prevent wrapping to ensure horizontal scrolling */
-    gap: 20px;
-    overflow-x: auto; /* Allow horizontal scrolling if needed */
-    // padding-bottom: 100px; /* Add some padding at the bottom to accommodate the scrollbar */
-    margin: 0 auto; /* Center the card-list and give equal space on both sides */
-    max-width: 1000px; /* Adjust the maximum width as needed */
-  }
-  
-  #btn1 {
-    background: linear-gradient(
-      90deg,
-      rgba(194, 29, 3, 1) 31%,
-      rgba(253, 87, 50, 1) 100%,
-      rgba(255, 183, 135, 1) 100%
-    );
-    color: white;
-    border-radius: 8px;
-  }
-  .add-plan{
-    width: 2000px;
-    text-align: right;
-    // border: 1px solid;
-  }
-  
-  .card-container {
-    border: 2px solid;
-    border-radius: 8px;
-    flex: 0 0 calc(33.33% - 16px); /* Three cards per row by default */
-    max-width: calc(33.33% - 16px); /* Limit the maximum width */
-  }
-  
-  #img-container{
-    width: 100%; /* Ensure the image takes 100% of the container width */
-    height: 150px; /* Set a fixed height for consistency, adjust as needed */
-    object-fit: cover; /* Maintain aspect ratio and cover the container */
-  }
-  
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-    display: inline-block;
-    margin: 10px;
-  }
-  
-  /* Media query for smaller screens */
-  @media screen and (max-width: 768px) {
-    .card-container {
-      flex: 0 0 calc(50% - 16px); /* Two cards per row on smaller screens */
-      max-width: calc(50% - 16px); /* Limit the maximum width */
   display: flex;
   justify-content: center;
   flex-wrap: nowrap; /* Prevent wrapping to ensure horizontal scrolling */
@@ -59,6 +8,7 @@
   // padding-bottom: 100px; /* Add some padding at the bottom to accommodate the scrollbar */
   margin: 0 auto; /* Center the card-list and give equal space on both sides */
   overflow-y: hidden;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
 }
 
 .purchace {
@@ -89,12 +39,12 @@
   border-radius: 5px;
   flex: 0 0 calc(33.33% - 16px); /* Three cards per row by default */
   max-width: calc(18.33% - 16px); /* Limit the maximum width */
-  height: 560px;
+  height: 500px;
 }
 
 #img-container {
   width: 100%; /* Ensure the image takes 100% of the container width */
-  height: 236px; /* Set a fixed height for consistency, adjust as needed */
+  height: 165px; /* Set a fixed height for consistency, adjust as needed */
   object-fit: cover; /* Maintain aspect ratio and cover the container */
 }
 
@@ -119,6 +69,7 @@ mat-card-content {
   }
   .ott {
     padding: 0;
+    height: 41%;
     ul {
       list-style: none;
       display: flex;
