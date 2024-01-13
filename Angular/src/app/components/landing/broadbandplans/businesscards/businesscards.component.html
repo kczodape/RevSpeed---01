@@ -11,12 +11,15 @@
         <hr>
         <h6 class="c">{{ card.benefits }}</h6>
   
-        <mat-card-title>{{ card.rentalTitle }}</mat-card-title>
-        <mat-card-subtitle>{{ card.rentalSubtitle }}</mat-card-subtitle>
+        <div class="purchace">
+          <div class="rental">
+            <mat-card-title>{{ card.rentalTitle }}</mat-card-title>
+            <mat-card-subtitle class="price">{{card.rentalSubtitle}}</mat-card-subtitle>
+          </div>
+          <div class="buy">
+            <button mat-raised-button id="btn" class="btn-paln">Add plan</button>
+          </div>
+        </div>
       </mat-card-content>
-  
-      <mat-card-actions>
-        <button mat-raised-button id="btn" class="btn-paln">Add plan</button>
-      </mat-card-actions>
     </mat-card>
   </div>

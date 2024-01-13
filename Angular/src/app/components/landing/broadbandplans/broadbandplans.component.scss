@@ -2,6 +2,15 @@
 
 h2 {
   font-size: 24px;
+  margin-top: 7%;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 200;
+  border-bottom: 3px solid #f05e23;
+  width: 35%;
+  padding-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 p {
@@ -11,6 +20,9 @@ p {
 .mat-tab-group {
   padding: 10px;
   background-color: #f5d4d4;
+mat-tab-group {
+  padding: 10px;
+  background-color: #f9f9f9;
   max-height: 80vh;
   overflow-y: auto;
   position: relative;
@@ -24,11 +36,15 @@ p {
   text-align: center;
   padding: 10px;
   width: 100%;
-  // background-color: #f5d4d4;
-  // position: sticky;
-  // bottom: 0;
 }
 #btn1 {
+  padding: 30px 0; /* Adjust the padding as needed */
+}
+
+.plan-tab-view-more-btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   background: linear-gradient(
     90deg,
     rgba(194, 29, 3, 1) 31%,
@@ -37,6 +53,9 @@ p {
   );
   color: white;
   border-radius: 8px;
+  color: #fff !important;
+  border-radius: 5px;
+  padding: 0 50px;
 }
 
 ::ng-deep .mat-tab-label {
@@ -122,4 +141,10 @@ p {
   .plan-tab-container {
     padding: 2px; /* Adjust the padding as needed */
   }
+}
+
+.mat-mdc-tab-body-content {
+  height: 100%;
+  overflow: auto;
+  overflow-y: hidden;
 }
