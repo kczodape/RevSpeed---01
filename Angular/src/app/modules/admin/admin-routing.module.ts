@@ -4,7 +4,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BroadbanComponent } from './broadban/broadban.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { DthComponent } from './dth/dth.component';
-import { OttComponent } from './ott/ott.component';
 import { SubscribersComponent } from './subscribers/subscribers.component';
 
 const routes: Routes = [
@@ -28,10 +27,6 @@ const routes: Routes = [
       {
         path: 'dth',
         component: DthComponent,
-      },
-      {
-        path: 'ott',
-        component: OttComponent,
       },
       {
         path: 'subscribers',

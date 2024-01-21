@@ -11,7 +11,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { BroadbanComponent } from './broadban/broadban.component';
 import { DthComponent } from './dth/dth.component';
-import { OttComponent } from './ott/ott.component';
 import { SubscribersComponent } from './subscribers/subscribers.component';
 import { ReveneugraphComponent } from './dashboard/reveneugraph/reveneugraph.component';
 import { AgChartsAngularModule } from 'ag-charts-angular';
@@ -33,6 +32,19 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { IndividualComponent } from './broadban/individual/individual.component';
 import { BusinessComponent } from './broadban/business/business.component';
 import { HttpClientModule } from '@angular/common/http';
+import { EnglishComponent } from './dth/english/english.component';
+import { HindiComponent } from './dth/hindi/hindi.component';
+import { TamilComponent } from './dth/tamil/tamil.component';
+import { EntertainmentComponent } from './dth/english/entertainment/entertainment.component';
+import { SportsComponent } from './dth/english/sports/sports.component';
+import { NewsComponent } from './dth/english/news/news.component';
+import { HindientertainmentComponent } from './dth/hindi/hindientertainment/hindientertainment.component';
+import { HindisportsComponent } from './dth/hindi/hindisports/hindisports.component';
+import { HindinewsComponent } from './dth/hindi/hindinews/hindinews.component';
+import { TamilentertainmentComponent } from './dth/tamil/tamilentertainment/tamilentertainment.component';
+import { TamilsportsComponent } from './dth/tamil/tamilsports/tamilsports.component';
+import { TamilnewsComponent } from './dth/tamil/tamilnews/tamilnews.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -40,7 +52,6 @@ import { HttpClientModule } from '@angular/common/http';
     SidebarComponent,
     BroadbanComponent,
     DthComponent,
-    OttComponent,
     SubscribersComponent,
     ReveneugraphComponent,
     TotalsubscribercardComponent,
@@ -51,6 +62,18 @@ import { HttpClientModule } from '@angular/common/http';
     ConfirmupdatedialogComponent,
     IndividualComponent,
     BusinessComponent,
+    EnglishComponent,
+    HindiComponent,
+    TamilComponent,
+    EntertainmentComponent,
+    SportsComponent,
+    NewsComponent,
+    HindientertainmentComponent,
+    HindisportsComponent,
+    HindinewsComponent,
+    TamilentertainmentComponent,
+    TamilsportsComponent,
+    TamilnewsComponent,
   ],
   imports: [
     CommonModule,
@@ -69,6 +92,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatSnackBarModule,
     MatTabsModule,
     HttpClientModule,
+    MatSelectModule
   ]
 })
 export class AdminModule { }

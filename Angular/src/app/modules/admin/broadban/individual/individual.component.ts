@@ -16,8 +16,9 @@ export class IndividualComponent implements AfterViewInit {
 
   constructor(private adminService: AdminService) { }
 
-  displayedColumns: string[] = ['id', 'duration', 'days', 'planName', 'speed', 'price'];
+  displayedColumns: string[] = ['id', 'duration', 'days', 'planName', 'speed', 'ottPlatform', 'price'];
   dataSource = new MatTableDataSource<IndividualInterface>();
+  ottPlatforms: { id: number; ott_platform: string }[] = [];
 
   ngAfterViewInit() {
      // Fetch data asynchronously using the service
@@ -28,6 +29,11 @@ export class IndividualComponent implements AfterViewInit {
       // Set up sorting and pagination
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
+    });
+
+     // Fetch OTT platform data
+     this.adminService.getOTTPlatforms().subscribe((ottPlatforms) => {
+      this.ottPlatforms = ottPlatforms;
     });
   }
 

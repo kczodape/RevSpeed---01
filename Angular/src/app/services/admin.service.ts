@@ -24,4 +24,13 @@ export class AdminService {
   getAllBusinessSubscriptions(): Observable<IndividualInterface[]> {
     return this.httpClient.get<IndividualInterface[]>(`${this.apiUrl}/businessSubscriptions`);
   }
+
+  getAllDTHChannels(): Observable<any[]> {
+    return this.httpClient.get<any[]>(`${this.apiUrl}/dth`);
+  }
+
+  // New method to fetch OTT platform data
+  getOTTPlatforms(): Observable<{ id: number; ott_platform: string }[]> {
+    return this.httpClient.get<{ id: number; ott_platform: string }[]>(`${this.apiUrl}/ott`);
+  }
 }
