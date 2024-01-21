@@ -29,6 +29,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule } from '@angular/forms';
 import { ConfirmupdatedialogComponent } from './subscribers/confirmupdatedialog/confirmupdatedialog.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatTabsModule} from '@angular/material/tabs';
+import { IndividualComponent } from './broadban/individual/individual.component';
+import { BusinessComponent } from './broadban/business/business.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -45,6 +49,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     DthpiechartComponent,
     ActiveinactiveusergraphComponent,
     ConfirmupdatedialogComponent,
+    IndividualComponent,
+    BusinessComponent,
   ],
   imports: [
     CommonModule,
@@ -60,7 +66,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatPaginatorModule,
     FormsModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTabsModule,
+    HttpClientModule,
   ]
 })
 export class AdminModule { }
