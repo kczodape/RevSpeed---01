@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OttComponent } from './ott.component';
+import { HindisportsComponent } from './hindisports.component';
 
-describe('OttComponent', () => {
-  let component: OttComponent;
-  let fixture: ComponentFixture<OttComponent>;
+describe('HindisportsComponent', () => {
+  let component: HindisportsComponent;
+  let fixture: ComponentFixture<HindisportsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [OttComponent]
+      declarations: [HindisportsComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(OttComponent);
+    fixture = TestBed.createComponent(HindisportsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
