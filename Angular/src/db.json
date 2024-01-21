@@ -1,0 +1,22 @@
+{
+    "subscribers": [
+      { "id": 1, "name": "Krunal Zodape", "email": "krunal@gmail.com", "phoneNumber": 8530278729, "address": "Khapa", "role": "Admin" },
+      { "id": 2, "name": "Aakash Solanke", "email": "aakash@gmail.com", "phoneNumber": 8530278729, "address": "Khapa", "role": "User" },
+      { "id": 3, "name": "Abhishek Chaure", "email": "abhishek@gmail.com", "phoneNumber": 8530278729, "address": "Khapa", "role": "User" },
+      { "id": 4, "name": "Raaghul", "email": "raaghul@gmail.com", "phoneNumber": 8530278729, "address": "Khapa", "role": "User" },
+      { "id": 5, "name": "Janani", "email": "janani@gmail.com", "phoneNumber": 8530278729, "address": "Khapa", "role": "User" },
+      { "id": 6, "name": "Sneha", "email": "sneha@gmail.com", "phoneNumber": 8530278729, "address": "Khapa", "role": "User" },
+      { "id": 7, "name": "Bazeer", "email": "bazeer@gmail.com", "phoneNumber": 8530278729, "address": "Khapa", "role": "User" },
+      { "id": 8, "name": "Madhan", "email": "madhan@gmail.com", "phoneNumber": 8530278729, "address": "Khapa", "role": "User" }
+    ],
+    "individualSubscriptions": [
+      { "id": 1, "duration": "Monthly", "days": 28, "planName": "Basic", "speed": "20 MBPS", "price": 10 },
+      { "id": 2, "duration": "Quarterly", "days": 84, "planName": "Standard", "speed": "30 MBPS", "price": 20 },
+      { "id": 3, "duration": "Yearly", "days": 360, "planName": "Entertainment", "speed": "40 MBPS", "price": 30 }
+    ],
+    "businessSubscriptions": [
+      { "id": 1, "duration": "Yearly", "days": 360, "planName": "Basic", "speed": "20 MBPS", "price": 10 },
+      { "id": 2, "duration": "Yearly", "days": 360, "planName": "Standard", "speed": "30 MBPS", "price": 20 }
+    ]
+}
+  
