@@ -19,12 +19,16 @@ import { TotalsubscribercardComponent } from './dashboard/totalsubscribercard/to
 import { TotalreveneucardComponent } from './dashboard/totalreveneucard/totalreveneucard.component';
 import { BroadbandpiechartComponent } from './dashboard/broadbandpiechart/broadbandpiechart.component';
 import { DthpiechartComponent } from './dashboard/dthpiechart/dthpiechart.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 import { ActiveinactiveusergraphComponent } from './dashboard/activeinactiveusergraph/activeinactiveusergraph.component';
 import { MatTableModule } from '@angular/material/table'; 
 import { MatSortModule } from '@angular/material/sort'; 
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { FormsModule } from '@angular/forms';
+import { ConfirmupdatedialogComponent } from './subscribers/confirmupdatedialog/confirmupdatedialog.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -40,6 +44,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     BroadbandpiechartComponent,
     DthpiechartComponent,
     ActiveinactiveusergraphComponent,
+    ConfirmupdatedialogComponent,
   ],
   imports: [
     CommonModule,
@@ -52,8 +57,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     AgChartsAngularModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
-
+    MatPaginatorModule,
+    FormsModule,
+    MatDialogModule,
+    MatSnackBarModule
   ]
 })
 export class AdminModule { }
