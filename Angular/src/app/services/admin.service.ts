@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Article } from '../modules/admin/subscribers/subscribers.component';
+import { SubscribersInterface } from '../modules/admin/Interfaces/SubscribersInterface';
 
-const All_ARTICLES: Article[] = [
+const ALL_USERS: SubscribersInterface[] = [
   { id: 1, name: 'Krunal Zodape', email: 'krunal@gmail.com', phoneNumber: 8530278729, address: 'Khapa', role:'Admin' },
   { id: 2, name: 'Aakash Solanke', email: 'aakash@gmail.com', phoneNumber: 8530278729, address: 'Khapa', role:'User' },
   { id: 3, name: 'Abhishek Chaure', email: 'abhishek@gmail.com', phoneNumber: 8530278729, address: 'Khapa', role:'User' },
@@ -18,7 +18,7 @@ export class AdminService {
 
   constructor() { }
 
-  getAllArticles() {
-    return All_ARTICLES;
+  getAllSubscribers() {
+    return ALL_USERS;
 }
 }
