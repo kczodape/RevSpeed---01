@@ -29,14 +29,12 @@
             formControlName="email"
             placeholder="Email*"
           />
-          <div class="validation" *ngIf="isFieldInvalid('email')">
-            <ng-container *ngIf="!isEmailExists()">
-              Email ID already exists. Please enter a different email.
-            </ng-container>
-            <ng-container *ngIf="isEmailExists() && isFieldInvalid('email')">
-              Please enter correct email!
-            </ng-container>
+          <div class="validation" *ngIf="isFieldInvalid('email') && isEmailExists()">
+            Please enter correct email!
           </div>
+          <div class="validation" *ngIf="isFieldInvalid('email') && !isEmailExists()">
+            Email ID already exists. Please enter a different email.
+          </div>          
         </div>
       </div>
       <div class="reg_inpt">
@@ -95,6 +93,6 @@
       </div>
       <button type="submit" [disabled]="registerForm.invalid">Register</button>
     </form>
-    <p>Already have an account? <a routerLink="/login">Login here</a></p>
+    <p>Already have an account ? <a routerLink="/login">Login here</a></p>
   </div>
 </div>

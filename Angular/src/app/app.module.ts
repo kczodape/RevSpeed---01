@@ -36,6 +36,10 @@ import { ViewdetailedbroadbandComponent } from './components/landing/viewdetaile
 import { FooterComponent } from './components/landing/footer/footer.component';
 import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AboutusComponent } from './components/landing/aboutus/aboutus.component';
+import { ForgotComponent } from './components/landing/forgot/forgot.component';
+import { OtpdialogComponent } from './components/landing/forgot/otpdialog/otpdialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ResetComponent } from './components/landing/forgot/otpdialog/reset/reset.component';
 
 
 
@@ -52,7 +56,10 @@ import { AboutusComponent } from './components/landing/aboutus/aboutus.component
     BusinesscardsComponent,
     ViewdetailedbroadbandComponent,
     FooterComponent,
-    AboutusComponent
+    AboutusComponent,
+    ForgotComponent,
+    OtpdialogComponent,
+    ResetComponent
   ],
   imports: [
     BrowserModule,
@@ -82,6 +89,7 @@ import { AboutusComponent } from './components/landing/aboutus/aboutus.component
         // allowedDomains: ['your-api-domain.com'], // replace with your API domain
       },
     }),
+    MatDialogModule
   ],
   providers: [
     // AuthService,
