@@ -1,0 +1,77 @@
+/* about-us.component.scss */
+$primary-color: #f05e23;
+$secondary-color: #ff9a71;
+$background-color: #f8f8f8;
+
+.hero-section h1{
+  // color: red;
+  text-align: left!important;
+  font-size: xx-large;
+  padding-left: 100px;
+  padding-top: 100px;
+}
+.section h2,
+.section h2 strong {
+  font-size: larger;
+  color: $primary-color;
+}
+
+// .section ul li strong {
+//   color: $secondary-color;
+// }
+
+div{
+  font-size: large;
+  text-align: center;
+}
+.hero-section {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  // background: #333; /* Example background color */
+  // opacity: 0.5;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 100px 0;
+  height: 300px;
+  
+}
+
+.hero-section::after {
+  content: ''; /* Add your hero image using CSS ::before */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('C:/Users/Revature-IT/Desktop/rev-p1/RevSpeed---01/Angular/src/assets/Entertainment-1.jpg') center/cover no-repeat;
+  // opacity: 0.5;
+  
+  z-index: -1;
+}
+
+.section {
+  max-width: 100%;
+  // margin: 40px auto;
+  padding: 20px;
+  // background: #f9f9f9; 
+  // border-radius: 8px;
+}
+
+.card-section {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  margin: 40px auto;
+}
+
+.card {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: background-color 0.3s ease,transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+}

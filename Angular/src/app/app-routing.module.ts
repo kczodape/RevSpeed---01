@@ -6,6 +6,7 @@ import { LoginComponent } from './components/landing/login/login.component';
 import { RegisterComponent } from './components/landing/register/register.component';
 import { AuthService } from './services/auth.service';
 import { ViewdetailedbroadbandComponent } from './components/landing/viewdetailedbroadband/viewdetailedbroadband.component';
+import { AboutusComponent } from './components/landing/aboutus/aboutus.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: 'landing',  // Change this path to a unique name
     component: LandingComponent,
+  },
+  {
+    path:'aboutus',
+    component: AboutusComponent
   },
   {
     path: '**',  // Catch-all route for unknown paths, redirect to landing

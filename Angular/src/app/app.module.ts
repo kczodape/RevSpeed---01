@@ -35,6 +35,7 @@ import { BusinesscardsComponent } from './components/landing/broadbandplans/busi
 import { ViewdetailedbroadbandComponent } from './components/landing/viewdetailedbroadband/viewdetailedbroadband.component';
 import { FooterComponent } from './components/landing/footer/footer.component';
 import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AboutusComponent } from './components/landing/aboutus/aboutus.component';
 
 
 
@@ -50,7 +51,8 @@ import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     IndividualcardsComponent,
     BusinesscardsComponent,
     ViewdetailedbroadbandComponent,
-    FooterComponent
+    FooterComponent,
+    AboutusComponent
   ],
   imports: [
     BrowserModule,

@@ -19,6 +19,7 @@ export interface BroadbandPlans {
   templateUrl: './viewdetailedbroadband.component.html',
   styleUrl: './viewdetailedbroadband.component.scss',
 })
+
 export class ViewdetailedbroadbandComponent implements AfterViewInit {
   @ViewChild(MatSort) sort = {} as MatSort;
   @ViewChild(MatPaginator) paginator = {} as MatPaginator;
