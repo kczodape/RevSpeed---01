@@ -113,6 +113,9 @@
       { "id": 3, "ott_platform": "Hotstar"},
       { "id": 4, "ott_platform": "Hulu"},
       { "id": 5, "ott_platform": "Sling"}
+    ],
+    "individualPlanTable" : [
+      {"id":1, "planName": "Monthly", "speed":"20 MBPS", "description":"xyz",  "price":10}
     ]
 }
   
