@@ -6,6 +6,7 @@ $background-color: #f8f8f8;
   max-width: 100%;
   margin: 0 auto;
   padding: 20px;
+  text-align: center;
 }
 .container h1{
     font-size: xx-large;
@@ -41,9 +42,9 @@ h1, h2 {
       }
     }
   }
-  .plan:hover {
-    transform: scale(1.05);
-}
+//   .plan:hover {
+//     transform: scale(1.05);
+// }
 }
 
 .mat-elevation-z8 {
@@ -107,13 +108,13 @@ h1, h2 {
       strong {
         font-weight: bold;
         color: black;
-        font-size: 16px;
+        font-size: 18px;
       }
 
-      p {
-        font-size: 16px;
-        line-height: 1.4;
-        color: #555;
+      li p {
+        font-size: 18px;
+        line-height: 1.5;
+        // color: #555;
       }
     }
   }
@@ -126,6 +127,7 @@ h1, h2 {
 
   h2 {
     color: $primary-color;
+    font-size: 24px;
   }
 }
 p {

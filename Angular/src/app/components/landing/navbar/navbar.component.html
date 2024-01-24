@@ -7,10 +7,10 @@
   <span class="example-spacer"></span>
 
   <a mat-button *ngIf="!isSmallScreen" routerLink="/">Home</a>
-  <a mat-button *ngIf="!isSmallScreen">BroadBand Service</a>
+  <a mat-button *ngIf="!isSmallScreen" routerLink="/viewmoreplan">BroadBand Service</a>
   <a mat-button *ngIf="!isSmallScreen">DTH Service</a>
-  <a mat-button *ngIf="!isSmallScreen">About Us</a>
-  <a mat-button *ngIf="!isSmallScreen">Contact us</a>
+  <a mat-button *ngIf="!isSmallScreen" routerLink="/aboutus">About Us</a>
+  <a mat-button *ngIf="!isSmallScreen" routerLink="/contact">Contact us</a>
 
   <mat-menu #profileMenu="matMenu">
     <button mat-menu-item ><i class="fa-solid fa-user"></i> Profile</button>
@@ -32,7 +32,7 @@
   <mat-menu #menu="matMenu" (closed)="isMenuOpen = false">
     <a mat-menu-item href="https://www.google.com/">Home</a>
     <a mat-menu-item href="https://www.google.com/">DTH</a>
-    <a mat-menu-item href="#broadBand">BroadBand</a>
+    <a mat-menu-item routerLink="/viewmoreplan">BroadBand</a>
     <a mat-menu-item href="https://www.google.com/">Contact</a>
     <a mat-menu-item href="https://www.google.com/">Notification</a>
     <a mat-menu-item href="https://www.google.com/">Billing</a>

@@ -4,13 +4,13 @@ import com.coderdot.dto.CustomersResponse;
 import com.coderdot.entities.Customer;
 import com.coderdot.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @RestController
@@ -36,14 +36,13 @@ public class CustomersController {
     }
 
 //    Api for geting Authenticated users details
-@GetMapping("/mydetails")
-public Optional<Customer> getMyDetails() {
-    // Get the currently authenticated user's email
-    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-    String userEmail = authentication.getName();
+    @GetMapping("/mydetails")
+    public Optional<Customer> getMyDetails() {
+        // Get the currently authenticated user's email
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String userEmail = authentication.getName();
 
-    // Fetch customer details based on email
-    return customerRepository.findByEmail(userEmail);
-}
-
+        // Fetch customer details based on email
+        return customerRepository.findByEmail(userEmail);
+    }
 }

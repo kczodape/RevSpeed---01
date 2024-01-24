@@ -6,6 +6,9 @@ import { LoginComponent } from './components/landing/login/login.component';
 import { RegisterComponent } from './components/landing/register/register.component';
 import { AuthService } from './services/auth.service';
 import { ViewdetailedbroadbandComponent } from './components/landing/viewdetailedbroadband/viewdetailedbroadband.component';
+import { AboutusComponent } from './components/landing/aboutus/aboutus.component';
+import { ForgotComponent } from './components/landing/forgot/forgot.component';
+import { ContactComponent } from './components/landing/contact/contact.component';
 
 const routes: Routes = [
   {
@@ -15,6 +18,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'forgot',
+    component: ForgotComponent
   },
   {
     path:'viewmoreplan',
@@ -33,6 +40,14 @@ const routes: Routes = [
   {
     path: 'landing',  // Change this path to a unique name
     component: LandingComponent,
+  },
+  {
+    path:'aboutus',
+    component: AboutusComponent
+  },
+  {
+    path:'contact',
+    component: ContactComponent
   },
   {
     path: '**',  // Catch-all route for unknown paths, redirect to landing

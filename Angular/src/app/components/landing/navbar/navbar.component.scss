@@ -40,6 +40,7 @@
     font-weight: 600;
     margin: 0 5px;
     width: 100px !important;
+    margin-top: 0px !important;
   }
   .register {
     background: linear-gradient(
@@ -104,7 +105,7 @@ mat-toolbar {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
   mat-icon,
   span {
     color: #fff;

@@ -35,6 +35,14 @@ import { BusinesscardsComponent } from './components/landing/broadbandplans/busi
 import { ViewdetailedbroadbandComponent } from './components/landing/viewdetailedbroadband/viewdetailedbroadband.component';
 import { FooterComponent } from './components/landing/footer/footer.component';
 import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AboutusComponent } from './components/landing/aboutus/aboutus.component';
+import { IndividualplanComponent } from './components/landing/viewdetailedbroadband/individualplan/individualplan.component';
+import { BusinessplanComponent } from './components/landing/viewdetailedbroadband/businessplan/businessplan.component';
+import { ForgotComponent } from './components/landing/forgot/forgot.component';
+import { OtpdialogComponent } from './components/landing/forgot/otpdialog/otpdialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ResetComponent } from './components/landing/forgot/otpdialog/reset/reset.component';
+import { ContactComponent } from './components/landing/contact/contact.component';
 
 
 
@@ -50,6 +58,14 @@ import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     IndividualcardsComponent,
     BusinesscardsComponent,
     ViewdetailedbroadbandComponent,
+    FooterComponent,
+    AboutusComponent,
+    IndividualplanComponent,
+    BusinessplanComponent,
+    ForgotComponent,
+    OtpdialogComponent,
+    ResetComponent,
+    ContactComponent,
     FooterComponent
   ],
   imports: [
@@ -80,6 +96,7 @@ import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
         // allowedDomains: ['your-api-domain.com'], // replace with your API domain
       },
     }),
+    MatDialogModule
   ],
   providers: [
     // AuthService,

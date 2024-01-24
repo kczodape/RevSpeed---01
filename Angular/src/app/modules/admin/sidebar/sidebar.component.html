@@ -2,17 +2,11 @@
     <button (click)="drawer.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
         <mat-icon>menu</mat-icon>
     </button>
-    <span>RevSpeed</span>
+    <p routerLink="/" class="logo">RevSpeed</p>
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
-    </button>
-    <button (click)="logout()">Logout</button>
+    <button (click)="logout()" class="logout">Logout</button>
 </mat-toolbar>
-<mat-drawer-container autosize style="height: 100vh;">
+<mat-drawer-container autosize style="height: 100vh; margin-top: 90px;">
     <mat-drawer #drawer opened="true" mode="side">
         <div class="image">
             <img src="./assets/8.jpg" alt="">
@@ -38,12 +32,6 @@
                 <div class="list-item">
                     <i class="fa-solid fa-satellite-dish"></i> 
                     <p>DTH Service</p> 
-                </div>
-            </mat-list-item>
-            <mat-list-item routerLink="ott" class="lists">
-                <div class="list-item">
-                    <i class="fa-solid fa-tv"></i>
-                    <p>OTT</p> 
                 </div>
             </mat-list-item>            
             <mat-list-item routerLink="subscribers" class="lists">
