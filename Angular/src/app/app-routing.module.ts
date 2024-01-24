@@ -8,6 +8,7 @@ import { AuthService } from './services/auth.service';
 import { ViewdetailedbroadbandComponent } from './components/landing/viewdetailedbroadband/viewdetailedbroadband.component';
 import { AboutusComponent } from './components/landing/aboutus/aboutus.component';
 import { ForgotComponent } from './components/landing/forgot/forgot.component';
+import { ContactComponent } from './components/landing/contact/contact.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,10 @@ const routes: Routes = [
   {
     path:'aboutus',
     component: AboutusComponent
+  },
+  {
+    path:'contact',
+    component: ContactComponent
   },
   {
     path: '**',  // Catch-all route for unknown paths, redirect to landing

@@ -40,6 +40,7 @@ import { ForgotComponent } from './components/landing/forgot/forgot.component';
 import { OtpdialogComponent } from './components/landing/forgot/otpdialog/otpdialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ResetComponent } from './components/landing/forgot/otpdialog/reset/reset.component';
+import { ContactComponent } from './components/landing/contact/contact.component';
 
 
 
@@ -59,7 +60,8 @@ import { ResetComponent } from './components/landing/forgot/otpdialog/reset/rese
     AboutusComponent,
     ForgotComponent,
     OtpdialogComponent,
-    ResetComponent
+    ResetComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

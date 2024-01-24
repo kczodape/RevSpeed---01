@@ -6,7 +6,7 @@
   </div>
   <div class="line"></div>
   <div class="login_form">
-    <h1>Register</h1>
+    <h1>Sign Up</h1>
     <form [formGroup]="registerForm" (submit)="submitForm()">
       <div class="reg_inpt">
         <div class="inpLabel">
@@ -93,6 +93,6 @@
       </div>
       <button type="submit" [disabled]="registerForm.invalid">Register</button>
     </form>
-    <p>Already have an account ? <a routerLink="/login">Login here</a></p>
+    <p>Already have an account ? <a routerLink="/login">Sign in here</a></p>
   </div>
 </div>
