@@ -1,13 +1,13 @@
 $orange: #f05e23;
 $head_text: #333;
 $error: red;
-$box_shadow:lightgrey;
+$box_shadow: lightgrey;
 .login {
   display: flex;
   width: 98%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 255px !important;
+  margin-top: 355px !important;
   .svg {
     width: 40% !important;
   }
@@ -87,6 +87,13 @@ $box_shadow:lightgrey;
           }
         }
       }
+    }
+    .anchor {
+      display: flex;
+      width: 65%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 2%;
     }
     p {
       a {

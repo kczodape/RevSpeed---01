@@ -2,6 +2,8 @@ package com.coderdot.controllers;
 
 import com.coderdot.dto.LoginRequest;
 import com.coderdot.dto.LoginResponse;
+import com.coderdot.entities.Customer;
+import com.coderdot.repository.CustomerRepository;
 import com.coderdot.services.jwt.CustomerServiceImpl;
 import com.coderdot.utils.JwtUtil;
 import jakarta.servlet.http.HttpServletResponse;
@@ -13,12 +15,11 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/login")
@@ -30,12 +31,19 @@ public class LoginController {
 
     private final JwtUtil jwtUtil;
 
+    @Autowired
+    private final PasswordEncoder passwordEncoder;
 
     @Autowired
-    public LoginController(AuthenticationManager authenticationManager, CustomerServiceImpl customerService, JwtUtil jwtUtil) {
+    private final CustomerRepository customerRepository;
+
+    @Autowired
+    public LoginController(AuthenticationManager authenticationManager, CustomerServiceImpl customerService, JwtUtil jwtUtil, PasswordEncoder passwordEncoder, CustomerRepository customerRepository) {
         this.authenticationManager = authenticationManager;
         this.customerService = customerService;
         this.jwtUtil = jwtUtil;
+        this.passwordEncoder = passwordEncoder;
+        this.customerRepository = customerRepository;
     }
 
     @PostMapping
@@ -53,6 +61,22 @@ public class LoginController {
         final String jwt = jwtUtil.generateToken(userDetails.getUsername());
 
         return ResponseEntity.ok(new LoginResponse(jwt));
+    }
+
+    @PostMapping("/updatepassword")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public ResponseEntity<Object> updatePassword(@RequestParam String email, @RequestParam String password){
+        Optional<Customer> optionalCustomer = customerRepository.findByEmail(email);
+        if (optionalCustomer.isPresent()){
+            Customer customer = optionalCustomer.get();
+            customer.setPassword(passwordEncoder.encode(password));
+
+            customerRepository.save(customer);
+            System.out.println("Password updated successfully.");
+            return ResponseEntity.ok().body("{\"message\": \"Password updated successfully !\"}");
+        }else{
+            return ResponseEntity.ok().body("{\"message\": \"User not found !\"}");
+        }
     }
 
 }

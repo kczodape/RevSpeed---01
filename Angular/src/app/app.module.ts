@@ -38,6 +38,11 @@ import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AboutusComponent } from './components/landing/aboutus/aboutus.component';
 import { IndividualplanComponent } from './components/landing/viewdetailedbroadband/individualplan/individualplan.component';
 import { BusinessplanComponent } from './components/landing/viewdetailedbroadband/businessplan/businessplan.component';
+import { ForgotComponent } from './components/landing/forgot/forgot.component';
+import { OtpdialogComponent } from './components/landing/forgot/otpdialog/otpdialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ResetComponent } from './components/landing/forgot/otpdialog/reset/reset.component';
+import { ContactComponent } from './components/landing/contact/contact.component';
 
 
 
@@ -56,7 +61,12 @@ import { BusinessplanComponent } from './components/landing/viewdetailedbroadban
     FooterComponent,
     AboutusComponent,
     IndividualplanComponent,
-    BusinessplanComponent
+    BusinessplanComponent,
+    ForgotComponent,
+    OtpdialogComponent,
+    ResetComponent,
+    ContactComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -86,6 +96,7 @@ import { BusinessplanComponent } from './components/landing/viewdetailedbroadban
         // allowedDomains: ['your-api-domain.com'], // replace with your API domain
       },
     }),
+    MatDialogModule
   ],
   providers: [
     // AuthService,
