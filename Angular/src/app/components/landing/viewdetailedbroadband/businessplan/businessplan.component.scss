@@ -41,4 +41,12 @@
       color: transparent;
     }
   }
-  
+  .plan-tab-view-more-btn {
+    display: block;
+      margin: 15px auto 15px auto;
+      margin-right: auto;
+      background: linear-gradient(90deg, rgb(194, 29, 3) 31%, rgb(253, 87, 50) 100%, rgb(255, 183, 135) 100%);
+      color: #fff !important;
+      border-radius: 5px;
+      padding: 0 50px;
+  }
