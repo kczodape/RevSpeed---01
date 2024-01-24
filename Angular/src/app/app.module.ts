@@ -24,14 +24,25 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatCardModule} from '@angular/material/card';
 import {MatChipsModule} from '@angular/material/chips';
 import { JwtService } from './services/jwt.service';
-// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-// import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 import { CarouselComponent } from './components/landing/carousel/carousel.component';
 import { BroadbandplansComponent } from './components/landing/broadbandplans/broadbandplans.component';
 import { IndividualcardsComponent } from './components/landing/broadbandplans/individualcards/individualcards.component';
 import { BusinesscardsComponent } from './components/landing/broadbandplans/businesscards/businesscards.component';
 import { ViewdetailedbroadbandComponent } from './components/landing/viewdetailedbroadband/viewdetailedbroadband.component';
+import { FooterComponent } from './components/landing/footer/footer.component';
 import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AboutusComponent } from './components/landing/aboutus/aboutus.component';
+import { IndividualplanComponent } from './components/landing/viewdetailedbroadband/individualplan/individualplan.component';
+import { BusinessplanComponent } from './components/landing/viewdetailedbroadband/businessplan/businessplan.component';
+import { ForgotComponent } from './components/landing/forgot/forgot.component';
+import { OtpdialogComponent } from './components/landing/forgot/otpdialog/otpdialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ResetComponent } from './components/landing/forgot/otpdialog/reset/reset.component';
+import { ContactComponent } from './components/landing/contact/contact.component';
 
 
 
@@ -46,7 +57,16 @@ import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BroadbandplansComponent,
     IndividualcardsComponent,
     BusinesscardsComponent,
-    ViewdetailedbroadbandComponent
+    ViewdetailedbroadbandComponent,
+    FooterComponent,
+    AboutusComponent,
+    IndividualplanComponent,
+    BusinessplanComponent,
+    ForgotComponent,
+    OtpdialogComponent,
+    ResetComponent,
+    ContactComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -61,11 +81,14 @@ import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatTabsModule,
     MatChipsModule,
     MatToolbarModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
     MatFormFieldModule,
     MatSnackBarModule,
+    MatInputModule,
     NgbModule,
     NgbCarouselModule,
-    MatInputModule,
     HttpClientModule,
     JwtModule.forRoot({
       config: {
@@ -73,6 +96,7 @@ import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
         // allowedDomains: ['your-api-domain.com'], // replace with your API domain
       },
     }),
+    MatDialogModule
   ],
   providers: [
     // AuthService,

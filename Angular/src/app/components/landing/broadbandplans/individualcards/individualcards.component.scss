@@ -8,6 +8,7 @@
   // padding-bottom: 100px; /* Add some padding at the bottom to accommodate the scrollbar */
   margin: 0 auto; /* Center the card-list and give equal space on both sides */
   overflow-y: hidden;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
 }
 
 .purchace {
@@ -38,12 +39,12 @@
   border-radius: 5px;
   flex: 0 0 calc(33.33% - 16px); /* Three cards per row by default */
   max-width: calc(18.33% - 16px); /* Limit the maximum width */
-  height: 560px;
+  height: 530px;
 }
 
 #img-container {
   width: 100%; /* Ensure the image takes 100% of the container width */
-  height: 236px; /* Set a fixed height for consistency, adjust as needed */
+  height: 165px; /* Set a fixed height for consistency, adjust as needed */
   object-fit: cover; /* Maintain aspect ratio and cover the container */
 }
 
@@ -68,6 +69,7 @@ mat-card-content {
   }
   .ott {
     padding: 0;
+    height: 41%;
     ul {
       list-style: none;
       display: flex;
