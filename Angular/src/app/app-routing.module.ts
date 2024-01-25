@@ -9,6 +9,7 @@ import { ViewdetailedbroadbandComponent } from './components/landing/viewdetaile
 import { AboutusComponent } from './components/landing/aboutus/aboutus.component';
 import { ForgotComponent } from './components/landing/forgot/forgot.component';
 import { ContactComponent } from './components/landing/contact/contact.component';
+import { ViewdetailedDthplansComponent } from './components/landing/viewdetailed-dthplans/viewdetailed-dthplans.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,11 @@ const routes: Routes = [
   {
     path:'viewmoreplan',
     component: ViewdetailedbroadbandComponent
+  },
+
+  {
+    path:'viewdetailedplan',
+    component:ViewdetailedDthplansComponent
   },
   {
     path: 'admin',
