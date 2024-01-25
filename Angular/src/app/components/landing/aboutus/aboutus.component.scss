@@ -4,16 +4,18 @@ $secondary-color: #ff9a71;
 $background-color: #f8f8f8;
 
 .hero-section h1{
-  // color: red;
   text-align: left!important;
-  font-size: xx-large;
+  font-weight: 100;
+  font-size: 85px;
   padding-left: 100px;
-  padding-top: 100px;
+  padding-top: 300px;
 }
-.section h2,
-.section h2 strong {
-  font-size: larger;
+.section h2 {
+  font-size: 35px;
   color: $primary-color;
+}
+span{
+  font-weight: 500 !important;
 }
 
 // .section ul li strong {
@@ -22,6 +24,7 @@ $background-color: #f8f8f8;
 ul{
   text-decoration: none;
   list-style: none;
+  line-height: 1.5;
 }
 
 div{
@@ -32,21 +35,20 @@ div{
   position: relative;
   text-align: center;
   color: #fff;
-  // background: #333; /* Example background color */
-  // opacity: 0.5;
   background-color: rgba(0, 0, 0, 0.75);
   padding: 100px 0;
-  height: 300px;
+  height: 500px;
   
 }
 
 .hero-section::after {
-  content: ''; /* Add your hero image using CSS ::before */
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  background: url('https://www.sybica.com/wp-content/uploads/2020/10/about-us-banner.jpg') center/cover no-repeat;
   z-index: -1;
 }
 
