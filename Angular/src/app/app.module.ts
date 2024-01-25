@@ -43,6 +43,16 @@ import { OtpdialogComponent } from './components/landing/forgot/otpdialog/otpdia
 import { MatDialogModule } from '@angular/material/dialog';
 import { ResetComponent } from './components/landing/forgot/otpdialog/reset/reset.component';
 import { ContactComponent } from './components/landing/contact/contact.component';
+import { DthplansComponent } from './components/landing/dthplans/dthplans.component';
+import { EnglishComponent } from './components/landing/dthplans/english/english.component';
+import { TamilComponent } from './components/landing/dthplans/tamil/tamil.component';
+import { HindiComponent } from './components/landing/dthplans/hindi/hindi.component';
+import { ViewdetailedDthplansComponent } from './components/landing/viewdetailed-dthplans/viewdetailed-dthplans.component';
+import { EntertainmentComponent } from './components/landing/viewdetailed-dthplans/english/entertainment/entertainment.component';
+import { SportsComponent } from './components/landing/viewdetailed-dthplans/english/sports/sports.component';
+import { NewsComponent } from './components/landing/viewdetailed-dthplans/english/news/news.component';
+
+
 
 
 
@@ -66,7 +76,16 @@ import { ContactComponent } from './components/landing/contact/contact.component
     OtpdialogComponent,
     ResetComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
+    DthplansComponent,
+    EnglishComponent,
+    TamilComponent,
+    HindiComponent,
+    ViewdetailedDthplansComponent,
+    EntertainmentComponent,
+    SportsComponent,
+    NewsComponent,
+
   ],
   imports: [
     BrowserModule,
