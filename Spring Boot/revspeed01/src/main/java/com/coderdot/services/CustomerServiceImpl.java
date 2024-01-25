@@ -1,4 +1,4 @@
-package com.coderdot.services.impl;
+package com.coderdot.services;
 
 import com.coderdot.entities.Customer;
 import com.coderdot.repository.CustomerRepository;
